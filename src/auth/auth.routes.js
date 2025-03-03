@@ -19,3 +19,4 @@ api.post('/loggingAdministrator', validateJwt, isAdmin, register)
 
 export default api
 
+   

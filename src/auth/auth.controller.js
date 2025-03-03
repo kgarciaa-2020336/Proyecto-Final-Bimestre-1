@@ -61,4 +61,4 @@ export const login = async (req, res) => {
         console.error(err)
         return res.status(500).send({ message: 'General error with login function' })
     }
-}
+}        
