@@ -1,5 +1,5 @@
 import {  Router } from 'express'
-import { isAdmin, isClient, validateJwt } from '../../middlewares/validate.jwt.js'
+import { isAdmin, isClient, isClientAdmin, validateJwt } from '../../middlewares/validate.jwt.js'
 import { catalogProduct, creatProduct, deleteProduct, filterProductsByCategory, getBestSellers, searchProduct, searchProducts, updateProduct } from './product.controller.js'
 import { productInfoUpdateValidator, productUpdateValidator, productValidator } from '../../helpers/validator.js'
 
@@ -14,12 +14,12 @@ api.post('/creatProduct',
 
 api.get('/searchProduct/:id',
     validateJwt,
-    isAdmin,
+    isClientAdmin,
     searchProduct)
 
 api.get('/catalogProduct',
     validateJwt,
-    isAdmin,
+    isClientAdmin,
     catalogProduct)
 
 api.put('/updateProduct/:id',
