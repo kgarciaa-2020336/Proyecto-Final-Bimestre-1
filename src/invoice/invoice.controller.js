@@ -49,7 +49,9 @@ export const createInvoice = async (req, res) => {
 
         await newInvoice.save()
 
+
         cart.items = []
+        cart.totalPrice = 0
         await cart.save()
 
         return res.status(201).send({

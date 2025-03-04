@@ -26,7 +26,7 @@ export const addCart = async (req, res) => {
 
             for (const item of cart.items) {
                 if (item.productId.equals(productId)) {
-                    item.quantity += quantity
+                    item.quantity = Number(item.quantity) + Number(quantity);
                     productFound = true
                     break
                 }
